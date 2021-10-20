@@ -13,17 +13,17 @@ export default class ToDoItem extends Component {
         
         return (
             // console.log(this.props),
-            <div className="row m-1 border border-3 border-dark d-flex align-items-center">
+            <div className="row m-1 border border-3 border-primary d-flex align-items-center">
                 <div className="col">
                     <button
-                        type="button btn-lg border border-rounded-circle mx-auto"
-                        className="btn btn-primary"
+                        type="button btn-lg border border-primary  mx-auto"
+                        className="btn btn-success text-primary"
                         id={this.props.data.id}
                         onClick={this.props.finish}>
-                        C
+                        <i class="bi bi-check-circle-fill"></i>
                          </button>
                 </div>
-                <div className="col h2 text-primary">
+                <div className="col h2 text-primary fw-bold">
                 {isCompleted
                 ?<strike>{this.props.data.textValue}</strike>
                 : this.props.data.textValue
@@ -31,11 +31,11 @@ export default class ToDoItem extends Component {
                 </div>
                 <div className="col">
                     <button
-                        type="button btn-lg border border-rounded-circle mx-auto"
-                        className="btn btn-primary"
+                        type="button btn-lg border border-primary  mx-auto"
+                        className="btn btn-success text-primary"
                         id={this.props.data.id}
                         onClick={this.props.remove}>
-                        X
+                        <i class="bi bi-x-circle-fill"></i>
                          </button>
                 </div>
             </div>

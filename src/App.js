@@ -118,7 +118,7 @@ export default class App extends Component {
         return (
             <container className="m-2">
                 <div className="row m-2">
-                    <div className="col text-center display-2 text-primary">To Do List</div>
+                    <div className="col text-center display-2 text-primary fw-bold">To Do List</div>
                 </div>
                 <div className="row m-1">
                     <div className="input-group mb-3">
@@ -130,7 +130,7 @@ export default class App extends Component {
                             onChange={this.handleChange}
                             onKeyPress={this.handleKeyPress}
                         />
-                        <button type="button" className="btn btn-success btn-lg" onClick={this.createItem}>Add</button>
+                        <button type="button" className="btn btn-success btn-lg text-primary" onClick={this.createItem}>Add</button>
                     </div>
                 </div>
                 {tempList}
@@ -140,25 +140,25 @@ export default class App extends Component {
                     </div>
                     <div className="col-1">
                         <button
-                            className="btn btn-success p-1"
+                            className="btn btn-success p-1 text-primary"
                             onClick={() => this.setState({ filterBy: "all" })}
                         >All</button>
                     </div>
                     <div className="col-2">
                         <button
-                            className="btn btn-success p-1"
+                            className="btn btn-success p-1 text-primary"
                             onClick={() => this.setState({ filterBy: "active" })}
                         >Active</button>
                     </div>
                     <div className="col-3">
                         <button
-                            className="btn btn-success p-1"
+                            className="btn btn-success p-1 text-primary"
                             onClick={() => this.setState({ filterBy: "completed" })}
                         >Completed</button>
                     </div>
                     <div className="col-3">
                         <button
-                            className="btn btn-success p-1 float-end"
+                            className="btn btn-success p-1 float-end text-primary"
                             onClick={this.deleteAll}
                         >Delete All</button>
                     </div>

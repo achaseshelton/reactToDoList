@@ -1,6 +1,10 @@
 @import "./bootstrap_variables_overwrite.scss";
 
+body {
+    background-color: rgb(221, 209, 196) !important;
+}
 
 
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css");

@@ -5,7 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 // import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
-import "./styles/index.scss"
+import "./styles/index.scss";
+
 // Put any other imports below so that CSS from your
 // components takes precedence over default styles.
 
