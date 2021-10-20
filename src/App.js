@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import ToDoItem from './ToDoItem';
 
+// 
+
 export default class App extends Component {
     constructor(props) {
         super(props)
@@ -13,9 +15,11 @@ export default class App extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.createItem = this.createItem.bind(this);
         this.deleteAll = this.deleteAll.bind(this);
+        this.completeAll = this.completeAll.bind(this);
         this.handleKeyPress = this.handleKeyPress.bind(this);
         this.complete = this.complete.bind(this);
         this.delete = this.delete.bind(this);
+        this.restoreActive = this.restoreActive.bind(this);
     }
 
     componentDidMount() {
@@ -88,18 +92,18 @@ export default class App extends Component {
         this.setState({ currentToDo: event.target.value });
     }
 
-    complete(e) {
+    complete(id) {
         let newArr = this.state.itemArr.map(todo => {
-            if (todo.id === parseInt(e.target.id)) {
+            if (todo.id === id) {
                 todo.completed = !todo.completed
             }
             return todo;
         });
         this.setState({ itemArr: newArr })
     }
-    delete(e) {
+    delete(id) {
         let newArr = this.state.itemArr.map(todo => {
-            if (todo.id === parseInt(e.target.id)) {
+            if (todo.id === id) {
                 todo.deleted = !todo.deleted
             }
             return todo;
@@ -107,14 +111,24 @@ export default class App extends Component {
         this.setState({ itemArr: newArr })
     }
 
+    restoreActive() {
+        let newArr = this.state.itemArr.filter(todo => todo.completed)
+        console.log(newArr);
+        this.setState({ newArr: newArr.map(todo => todo.completed = false) })
+    }
+
     deleteAll() {
-        let newArr = this.state.itemArr.filter(todo => !todo.deleted)
+        let newArr = this.state.itemArr.filter(todo => todo.completed)
         this.setState({ newArr: newArr.map(todo => todo.deleted = true) })
     }
 
+    completeAll() {
+        let newArr = this.state.itemArr.filter(todo => !todo.completed)
+        this.setState({ newArr: newArr.map(todo => todo.completed = true) })
+    }
+
     render() {
-        let tempList = [];
-        tempList = this.read();
+        let tempList = this.read();
         return (
             <container className="m-2">
                 <div className="row m-2">
@@ -137,32 +151,44 @@ export default class App extends Component {
                 </div>
                 {tempList}
                 <div className="row d-flex align-items-center">
-                    <div className="col-3 text-center h4 text-primary">
+                    <div className="col text-center h4 text-primary fw-bold">
                         {this.itemsLeft()}
                     </div>
-                    <div className="col-1">
+                </div>
+                <div className="row d-flex align-items-center m-1">
+                    <div className="col-3">
                         <button
                             className="btn btn-success p-1 text-primary"
                             onClick={() => this.setState({ filterBy: "all" })}
                         >All</button>
                     </div>
-                    <div className="col-2">
+                    <div className="col-4">
                         <button
                             className="btn btn-success p-1 text-primary"
                             onClick={() => this.setState({ filterBy: "active" })}
                         >Active</button>
                     </div>
-                    <div className="col-3">
+                    <div className="col-5">
                         <button
                             className="btn btn-success p-1 text-primary"
                             onClick={() => this.setState({ filterBy: "completed" })}
                         >Completed</button>
                     </div>
-                    <div className="col-3">
+                </div>
+                <div classname="row m-1"> 
+                    <div className="btn-group d-flex justify content-center">
                         <button
-                            className="btn btn-success p-1 float-end text-primary"
+                            className="btn btn-success p-1 text-primary"
+                            onClick={this.restoreActive}
+                        >Restore Completed</button>
+                        <button
+                            className="btn btn-success p-1 text-primary"
+                            onClick={this.completeAll}
+                        >Complete All</button>
+                        <button
+                            className="btn btn-success p-1 text-primary"
                             onClick={this.deleteAll}
-                        >Delete All</button>
+                        >Delete Comnpleted</button>
                     </div>
                 </div>
             </container>
