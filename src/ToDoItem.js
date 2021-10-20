@@ -11,7 +11,7 @@ export default class ToDoItem extends Component {
                 <div className="col">
                     <button
                         type="button btn-lg border border-primary  mx-auto"
-                        className="btn btn-success text-primary"
+                        className="btn btn-success text-primary m-1"
                         onClick={() => this.props.finish(this.props.data.id)}>
                         <i class="bi bi-check-circle-fill"></i>
                     </button>
@@ -25,7 +25,7 @@ export default class ToDoItem extends Component {
                 <div className="col">
                     <button
                         type="button btn-lg border border-primary  mx-auto"
-                        className="btn btn-success text-primary float-end"
+                        className="btn btn-success text-primary float-end m-1"
                         onClick={() => this.props.remove(this.props.data.id)}>
                         <i class="bi bi-x-circle-fill"></i>
                     </button>

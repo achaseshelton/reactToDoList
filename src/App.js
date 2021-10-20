@@ -113,7 +113,6 @@ export default class App extends Component {
 
     restoreActive() {
         let newArr = this.state.itemArr.filter(todo => todo.completed)
-        console.log(newArr);
         this.setState({ newArr: newArr.map(todo => todo.completed = false) })
     }
 
@@ -175,7 +174,7 @@ export default class App extends Component {
                         >Completed</button>
                     </div>
                 </div>
-                <div classname="row m-1"> 
+                <div classname="row m-1">
                     <div className="btn-group d-flex justify content-center">
                         <button
                             className="btn btn-success p-1 text-primary"
