@@ -130,7 +130,7 @@ export default class App extends Component {
                             onChange={this.handleChange}
                             onKeyPress={this.handleKeyPress}
                         />
-                        <button type="button" className="btn btn-primary btn-lg" onClick={this.createItem}>Add</button>
+                        <button type="button" className="btn btn-success btn-lg" onClick={this.createItem}>Add</button>
                     </div>
                 </div>
                 {tempList}
@@ -140,25 +140,25 @@ export default class App extends Component {
                     </div>
                     <div className="col-1">
                         <button
-                            className="btn btn-primary p-1"
+                            className="btn btn-success p-1"
                             onClick={() => this.setState({ filterBy: "all" })}
                         >All</button>
                     </div>
                     <div className="col-2">
                         <button
-                            className="btn btn-primary p-1"
+                            className="btn btn-success p-1"
                             onClick={() => this.setState({ filterBy: "active" })}
                         >Active</button>
                     </div>
                     <div className="col-3">
                         <button
-                            className="btn btn-primary p-1"
+                            className="btn btn-success p-1"
                             onClick={() => this.setState({ filterBy: "completed" })}
                         >Completed</button>
                     </div>
                     <div className="col-3">
                         <button
-                            className="btn btn-primary p-1 float-end"
+                            className="btn btn-success p-1 float-end"
                             onClick={this.deleteAll}
                         >Delete All</button>
                     </div>
