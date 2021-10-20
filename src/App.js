@@ -21,7 +21,7 @@ export default class App extends Component {
     componentDidMount() {
         // fetch the local storage files if they exsist and parse the files into the itemArr?
         let newArr = JSON.parse(localStorage.getItem("itemarr"))
-        if (newArr.length > 0) {
+        if (newArr) {
             this.setState({ itemArr: newArr })
         }
     }
@@ -118,7 +118,7 @@ export default class App extends Component {
         return (
             <container className="m-2">
                 <div className="row m-2">
-                    <div className="col text-center display-2">To Do List</div>
+                    <div className="col text-center display-2 text-primary">To Do List</div>
                 </div>
                 <div className="row m-1">
                     <div className="input-group mb-3">
@@ -135,7 +135,7 @@ export default class App extends Component {
                 </div>
                 {tempList}
                 <div className="row d-flex align-items-center">
-                    <div className="col-3 text-center h4">
+                    <div className="col-3 text-center h4 text-primary">
                         {this.itemsLeft()}
                     </div>
                     <div className="col-1">

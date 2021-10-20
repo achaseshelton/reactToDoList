@@ -9,6 +9,8 @@ export default class ToDoItem extends Component {
 
 
     render() {
+        const isCompleted = this.props.data.completed === true;
+        
         return (
             // console.log(this.props),
             <div className="row m-1 border border-3 border-dark d-flex align-items-center">
@@ -21,7 +23,12 @@ export default class ToDoItem extends Component {
                         C
                          </button>
                 </div>
-                <div className="col h2">{this.props.data.textValue}</div>
+                <div className="col h2 text-primary">
+                {isCompleted
+                ?<strike>{this.props.data.textValue}</strike>
+                : this.props.data.textValue
+                }
+                </div>
                 <div className="col">
                     <button
                         type="button btn-lg border border-rounded-circle mx-auto"
