@@ -130,7 +130,9 @@ export default class App extends Component {
                             onChange={this.handleChange}
                             onKeyPress={this.handleKeyPress}
                         />
-                        <button type="button" className="btn btn-success btn-lg text-primary" onClick={this.createItem}>Add</button>
+                        <button type="button" className="btn btn-success btn-lg text-primary" onClick={this.createItem}>
+                            <i class="bi bi-plus-circle-fill"></i>
+                        </button>
                     </div>
                 </div>
                 {tempList}

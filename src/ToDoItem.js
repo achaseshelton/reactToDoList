@@ -32,7 +32,7 @@ export default class ToDoItem extends Component {
                 <div className="col">
                     <button
                         type="button btn-lg border border-primary  mx-auto"
-                        className="btn btn-success text-primary"
+                        className="btn btn-success text-primary float-end"
                         id={this.props.data.id}
                         onClick={this.props.remove}>
                         <i class="bi bi-x-circle-fill"></i>
