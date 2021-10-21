@@ -154,22 +154,18 @@ export default class App extends Component {
                         {this.itemsLeft()}
                     </div>
                 </div>
-                <div className="row d-flex align-items-center m-1">
-                    <div className="col-3">
+                <div className="row m-1">
+                    <div className="btn-group d-flex justify content-center">
                         <button
-                            className="btn btn-success p-1 text-primary"
+                            className="btn btn-success p-1 text-primary fw-bold"
                             onClick={() => this.setState({ filterBy: "all" })}
                         >All</button>
-                    </div>
-                    <div className="col-4">
                         <button
-                            className="btn btn-success p-1 text-primary"
+                            className="btn btn-success p-1 text-primary fw-bold"
                             onClick={() => this.setState({ filterBy: "active" })}
                         >Active</button>
-                    </div>
-                    <div className="col-5">
                         <button
-                            className="btn btn-success p-1 text-primary"
+                            className="btn btn-success p-1 text-primary fw-bold"
                             onClick={() => this.setState({ filterBy: "completed" })}
                         >Completed</button>
                     </div>
@@ -177,15 +173,15 @@ export default class App extends Component {
                 <div classname="row m-1">
                     <div className="btn-group d-flex justify content-center">
                         <button
-                            className="btn btn-success p-1 text-primary"
+                            className="btn btn-success p-1 text-primary fw-bold"
                             onClick={this.restoreActive}
                         >Restore Completed</button>
                         <button
-                            className="btn btn-success p-1 text-primary"
+                            className="btn btn-success p-1 text-primary fw-bold"
                             onClick={this.completeAll}
                         >Complete All</button>
                         <button
-                            className="btn btn-success p-1 text-primary"
+                            className="btn btn-success p-1 text-primary fw-bold"
                             onClick={this.deleteAll}
                         >Delete Comnpleted</button>
                     </div>

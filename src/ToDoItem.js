@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 
 export default class ToDoItem extends Component {
-    
+
     render() {
+        console.log(this.props)
         const isCompleted = this.props.data.completed;
 
         return (
@@ -13,7 +14,10 @@ export default class ToDoItem extends Component {
                         type="button btn-lg border border-primary  mx-auto"
                         className="btn btn-success text-primary m-1"
                         onClick={() => this.props.finish(this.props.data.id)}>
-                        <i class="bi bi-check-circle-fill"></i>
+                        {isCompleted
+                            ? <i class="bi bi-plus-circle-fill"></i>
+                            : <i class="bi bi-check-circle-fill"></i>
+                        }
                     </button>
                 </div>
                 <div className="col h2 text-primary fw-bold">
