@@ -76,11 +76,11 @@ export default class App extends Component {
         let filteredArr = this.state.itemArr.filter(todo => !todo.completed && !todo.deleted);
         let completedArr = this.state.itemArr.filter(todo => todo.completed && !todo.deleted);
         if (this.state.filterBy === "all") {
-            return activeArr.length + " of " + activeArr.length;
+            return activeArr.length + " of " + activeArr.length + " items";
         } else if (this.state.filterBy === "active") {
-            return filteredArr.length + " of " + activeArr.length;
+            return filteredArr.length + " of " + activeArr.length + " items";
         } else if (this.state.filterBy === "completed") {
-            return completedArr.length + " of " + activeArr.length;
+            return completedArr.length + " of " + activeArr.length + " items";
         } else {
             return ""
         }
